@@ -11,9 +11,15 @@ public class BasicRewardFunction implements RewardFunction {
 	int goalX;
 	int goalY;
 
-	public BasicRewardFunction(int goalX, int goalY) {
+	int pitX;
+	int pitY;
+	
+	public BasicRewardFunction(int goalX, int goalY, int pitX, int pitY) {
 		this.goalX = goalX;
 		this.goalY = goalY;
+		
+		this.pitX = pitX;
+		this.pitY = pitY;
 	}
 
 	@Override
@@ -27,6 +33,10 @@ public class BasicRewardFunction implements RewardFunction {
 		// are they at goal location?
 		if (ax == this.goalX && ay == this.goalY) {
 			return 100.;
+		}
+		
+		if (ax == this.pitX && ay == this.pitY) {
+			return -100.;
 		}
 
 		return -1;

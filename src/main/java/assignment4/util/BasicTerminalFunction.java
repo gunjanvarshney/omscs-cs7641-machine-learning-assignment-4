@@ -9,7 +9,7 @@ public class BasicTerminalFunction implements TerminalFunction {
 
 	int goalX;
 	int goalY;
-
+	
 	public BasicTerminalFunction(int goalX, int goalY) {
 		this.goalX = goalX;
 		this.goalY = goalY;

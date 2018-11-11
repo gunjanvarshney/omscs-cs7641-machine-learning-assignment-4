@@ -2,6 +2,7 @@ package assignment4.util;
 
 import burlap.oomdp.core.values.DoubleArrayValue;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,8 @@ public final class AnalysisAggregator {
 	private static List<Double> rewardsForValueIteration = new ArrayList<Double>();
 	private static List<Double> rewardsForPolicyIteration = new ArrayList<Double>();
 	private static List<Double> rewardsForQLearning = new ArrayList<Double>();
+	
+	private static DecimalFormat df2 = new DecimalFormat(".##");
 	
 	public static void addNumberOfIterations(Integer numIterations1){
 		numIterations.add(numIterations1);
@@ -99,7 +102,7 @@ public final class AnalysisAggregator {
 	private static void printList(List<Integer> valueList){
 		int counter = 0;
 		for(int value : valueList){
-			System.out.print(String.valueOf(value));
+			System.out.print(value);
 			if(counter != valueList.size()-1){
 				System.out.print(",");
 			}
@@ -110,7 +113,7 @@ public final class AnalysisAggregator {
 	private static void printDoubleList(List<Double> valueList){
 		int counter = 0;
 		for(double value : valueList){
-			System.out.print(String.valueOf(value));
+			System.out.print(df2.format(value));
 			if(counter != valueList.size()-1){
 				System.out.print(",");
 			}
